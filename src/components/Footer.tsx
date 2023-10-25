@@ -8,6 +8,29 @@ export function Footer() {
   return (
     <footer className="bg-slate-50">
       <Container>
+      <form className='py-32'>
+          <div className='container mx-auto px-16 py-8 bg-slate-900 rounded-lg'>
+            <h1 className="font-display text-3xl tracking-tight text-white sm:text-4xl pb-5">¡Conáctanos!</h1>
+            <div className="relative z-0 w-full mb-6 group">
+              <input type="text" name="floating_name" id="floating_name" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label htmlFor="floating_name" className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <input type="number" name="floating_tel" id="floating_tel" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label htmlFor="floating_tel" className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Teléfono de contacto</label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <input type="email" name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label htmlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo electrónico</label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <label htmlFor="message" className="block mb-2 text-sm peer-focus:font-medium text-white">Dejános un mensaje</label>
+              <textarea id="message" className="block p-2.5 w-full text-sm text-white bg-slate-800 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Cuéntanos cuáles son tus dudas..."></textarea>
+            </div>
+            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Enviar</button>
+          </div>
+        </form>
+
         <div className="py-16">
           <Logo className="mx-auto h-10 w-auto" />
           <nav className="mt-10 text-sm" aria-label="quick links">
