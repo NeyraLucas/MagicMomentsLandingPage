@@ -90,7 +90,7 @@ function MobileNavigation() {
             <NavLink href="#about">Sobre nosotros</NavLink>
             <MobileNavLink href="#pricing">Precios</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
-            <MobileNavLink href="/login">Contacto</MobileNavLink>
+            <MobileNavLink href="#">Contacto</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -120,7 +120,7 @@ export function Header() {
             {/* <div className="hidden md:block">
               <NavLink href="/login">Sign in</NavLink>
             </div> */}
-            <Button href="/register" color="sky">
+            <Button href="#" color="sky">
               <span>
                 Contacto
               </span>

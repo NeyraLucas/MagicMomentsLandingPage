@@ -7,35 +7,35 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-features.jpg'
-import screenshotExpenses from '@/images/screenshots/expenses.png'
-import screenshotPayroll from '@/images/screenshots/payroll.png'
-import screenshotReporting from '@/images/screenshots/reporting.png'
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import wedding from '@/images/products/wedding.png'
+import myXV from '@/images/products/my_xv_years.jpg'
+import babyShower from '@/images/products/baby-shawer.jpg'
+import fiestasGenerales from '@/images/products/fiestas-generales.jpg'
 
 const features = [
   {
-    title: 'Payroll',
+    title: 'Bodas',
     description:
       "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
-    image: screenshotPayroll,
+    image: wedding,
   },
   {
-    title: 'Claim expenses',
+    title: 'XV años',
     description:
       "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
-    image: screenshotExpenses,
+    image: myXV,
   },
   {
-    title: 'VAT handling',
+    title: 'Baby Shower',
     description:
       "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
-    image: screenshotVatReturns,
+    image: babyShower,
   },
   {
-    title: 'Reporting',
+    title: 'Fiestas en general',
     description:
       'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
-    image: screenshotReporting,
+    image: fiestasGenerales,
   },
 ]
 
@@ -82,7 +82,7 @@ export function PrimaryFeatures() {
           Sumérgete en un mundo de creatividad y elegancia con nuestra exclusiva colección de invitaciones personalizadas. Cada diseño cuenta una historia única.
           </p>
         </div>
-        {/* <Tab.Group
+        <Tab.Group
           as="div"
           className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
           vertical={tabOrientation === 'vertical'}
@@ -151,7 +151,7 @@ export function PrimaryFeatures() {
               </Tab.Panels>
             </>
           )}
-        </Tab.Group> */}
+        </Tab.Group>
       </Container>
     </section>
   )
