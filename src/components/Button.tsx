@@ -16,11 +16,10 @@ const variantStyles = {
     white:
       'bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white',
     yellow:
-    'bg-yellow-400 text-white hover:bg-yellow-500 hover:text-yellow-200 active:bg-yellow-800 active:text-yellow-300 focus-visible:outline-yellow-900',
-    pink:
-    'bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900',
-    rose:
-    'bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900'
+      'bg-yellow-400 text-white hover:bg-yellow-500 hover:text-yellow-200 active:bg-yellow-800 active:text-yellow-300 focus-visible:outline-yellow-900',
+    pink: 'bg-pink-500 text-white hover:bg-pink-600 hover:text-white active:bg-pink-800 active:text-pink-300 focus-visible:outline-pink-900',
+    rose: 'bg-rose-500 text-white hover:bg-rose-600 hover:text-white active:bg-rose-800 active:text-rose-300 focus-visible:outline-rose-900',
+    sky: 'bg-sky-500 text-white hover:bg-sky-600 hover:text-white active:bg-sky-800 active:text-sky-300 focus-visible:outline-sky-900',
   },
   outline: {
     slate:

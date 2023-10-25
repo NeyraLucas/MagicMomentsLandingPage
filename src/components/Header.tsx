@@ -85,11 +85,12 @@ function MobileNavigation() {
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
-            <MobileNavLink href="#features">Features</MobileNavLink>
-            <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
-            <MobileNavLink href="#pricing">Pricing</MobileNavLink>
+            <MobileNavLink href="#features">Productos</MobileNavLink>
+            <MobileNavLink href="#testimonials">Testimonios</MobileNavLink>
+            <NavLink href="#about">Sobre nosotros</NavLink>
+            <MobileNavLink href="#pricing">Precios</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
-            <MobileNavLink href="/login">Sign in</MobileNavLink>
+            <MobileNavLink href="#">Contacto</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -104,22 +105,24 @@ export function Header() {
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="#" aria-label="Home">
+              {/* LOGO */}
               {/* <Logo className="h-10 w-auto" /> */}
-              <p>MagicMoments</p>
+              <p><span className='font-semibold text-sky-400'>Magic</span>Moments</p>
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#features">Features</NavLink>
-              <NavLink href="#testimonials">Testimonials</NavLink>
-              <NavLink href="#pricing">Pricing</NavLink>
+              <NavLink href="#features">Productos</NavLink>
+              <NavLink href="#testimonials">Testimonios</NavLink>
+              <NavLink href="#about">Sobre nosotros</NavLink>
+              <NavLink href="#pricing">Precios</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
               <NavLink href="/login">Sign in</NavLink>
-            </div>
-            <Button href="/register" color="yellow">
+            </div> */}
+            <Button href="#" color="sky">
               <span>
-                Get started <span className="hidden lg:inline">today</span>
+                Contacto
               </span>
             </Button>
             <div className="-mr-1 md:hidden">

@@ -6,70 +6,73 @@ import avatarImage2 from '@/images/avatars/avatar-2.png'
 import avatarImage3 from '@/images/avatars/avatar-3.png'
 import avatarImage4 from '@/images/avatars/avatar-4.png'
 import avatarImage5 from '@/images/avatars/avatar-5.png'
+import avatar from '@/images/avatars/user.png'
 
-const testimonials = [
+interface IUsers {
+  body: string
+  author: {
+    name: string
+    handle?: string
+    imageUrl: any
+  }
+}
+
+const testimonials: Array<IUsers[]> = [
   [
     {
-      content:
-        'TaxPal is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.',
+      body: 'Me encanta la idea de invitaciones digitales. Ahorro en papel y contribuyo al medio ambiente. ¡El diseño fue perfecto!',
       author: {
-        name: 'Sheryl Berge',
-        role: 'CEO at Lynch LLC',
-        image: avatarImage1,
+        name: 'Andrea D',
+        handle: '',
+        imageUrl: avatar,
       },
     },
     {
-      content:
-        'I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are saying it has something to do with my books. Please get back to me right away.',
+      body: 'La comodidad de recibir invitaciones digitales en mi correo fue genial. Las personalizaron exactamente como queríamos. ¡Muy recomendable!',
       author: {
-        name: 'Amy Hahn',
-        role: 'Director at Velocity Industries',
-        image: avatarImage4,
+        name: 'Alejandro M.',
+        handle: '',
+        imageUrl: avatar,
       },
     },
   ],
   [
     {
-      content:
-        'The best part about TaxPal is every time I pay my employees, my bank balance doesn’t go down like it used to. Looking forward to spending this extra cash when I figure out why my card is being declined.',
+      body: 'Increíblemente fácil y rápido. Pedimos nuestras invitaciones digitales y las compartimos con nuestros amigos en minutos. ¡Una solución moderna y eficiente!',
       author: {
-        name: 'Leland Kiehn',
-        role: 'Founder of Kiehn and Sons',
-        image: avatarImage5,
+        name: 'Valentina R.',
+        handle: '',
+        imageUrl: avatar,
       },
     },
     {
-      content:
-        'There are so many things I had to do with my old software that I just don’t do at all with TaxPal. Suspicious but I can’t say I don’t love it.',
+      body: 'Nuestro evento especial se sintió aún más único gracias a las invitaciones digitales personalizadas. ¡El proceso fue sin complicaciones y el resultado final fue impresionante!',
       author: {
-        name: 'Erin Powlowski',
-        role: 'COO at Armstrong Inc',
-        image: avatarImage2,
+        name: 'Diego S',
+        handle: '',
+        imageUrl: avatar,
       },
     },
   ],
   [
     {
-      content:
-        'I used to have to remit tax to the EU and with TaxPal I somehow don’t have to do that anymore. Nervous to travel there now though.',
+      body: 'Como profesional ocupado, valoro la simplicidad y la calidad. Las invitaciones digitales de esta plataforma cumplieron con creces mis expectativas. ¡Definitivamente las recomendaré!',
       author: {
-        name: 'Peter Renolds',
-        role: 'Founder of West Inc',
-        image: avatarImage3,
+        name: 'Javier L.',
+        handle: '',
+        imageUrl: avatar,
       },
     },
     {
-      content:
-        'This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax fraud. Please answer your damn emails, this is important.',
+      body: 'Nuestro evento especial se sintió aún más único gracias a las invitaciones digitales personalizadas. ¡El proceso fue sin complicaciones y el resultado final fue impresionante!',
       author: {
-        name: 'Amy Hahn',
-        role: 'Director at Velocity Industries',
-        image: avatarImage4,
+        name: ' Sofía R.',
+        handle: '',
+        imageUrl: avatar,
       },
     },
   ],
 ]
-
 function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg aria-hidden="true" width={105} height={78} {...props}>
@@ -77,7 +80,6 @@ function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
     </svg>
   )
 }
-
 export function Testimonials() {
   return (
     <section
@@ -88,12 +90,10 @@ export function Testimonials() {
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Loved by businesses worldwide.
+            Lo que Nuestros Clientes Dicen.
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Our software is so simple that people can’t help but fall in love
-            with it. Simplicity is easy when you just skip tons of
-            mission-critical features.
+            Nuestra Mejor Recompensa es tu Satisfacción
           </p>
         </div>
         <ul
@@ -109,7 +109,7 @@ export function Testimonials() {
                       <QuoteIcon className="absolute left-6 top-6 fill-slate-100" />
                       <blockquote className="relative">
                         <p className="text-lg tracking-tight text-slate-900">
-                          {testimonial.content}
+                          {testimonial.body}
                         </p>
                       </blockquote>
                       <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
@@ -118,13 +118,13 @@ export function Testimonials() {
                             {testimonial.author.name}
                           </div>
                           <div className="mt-1 text-sm text-slate-500">
-                            {testimonial.author.role}
+                            {testimonial.author.handle}
                           </div>
                         </div>
                         <div className="overflow-hidden rounded-full bg-slate-50">
                           <Image
                             className="h-14 w-14 object-cover"
-                            src={testimonial.author.image}
+                            src={testimonial.author.imageUrl}
                             alt=""
                             width={56}
                             height={56}

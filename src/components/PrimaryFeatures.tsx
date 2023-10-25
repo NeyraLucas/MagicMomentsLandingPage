@@ -7,35 +7,35 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-features.jpg'
-import screenshotExpenses from '@/images/screenshots/expenses.png'
-import screenshotPayroll from '@/images/screenshots/payroll.png'
-import screenshotReporting from '@/images/screenshots/reporting.png'
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import wedding from '@/images/products/wedding.png'
+import myXV from '@/images/products/my_xv_years.jpg'
+import babyShower from '@/images/products/baby-shawer.jpg'
+import fiestasGenerales from '@/images/products/fiestas-generales.jpg'
 
 const features = [
   {
-    title: 'Payroll',
+    title: 'Bodas',
     description:
-      "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
-    image: screenshotPayroll,
+      "Celebra el amor en su máxima expresión con nuestras invitaciones digitales personalizadas para bodas. Diseños elegantes y románticos que marcan el comienzo de un nuevo capítulo.",
+    image: wedding,
   },
   {
-    title: 'Claim expenses',
+    title: 'XV años',
     description:
-      "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
-    image: screenshotExpenses,
+      "Los XV años son un hito especial en la vida de cualquier joven. Nuestras invitaciones digitales capturan la belleza y la emoción de este momento único.",
+    image: myXV,
   },
   {
-    title: 'VAT handling',
+    title: 'Baby Shower',
     description:
-      "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
-    image: screenshotVatReturns,
+      "Dale la bienvenida al nuevo miembro de la familia con invitaciones digitales tiernas y adorables para baby showers. Un toque de dulzura para este momento especial.",
+    image: babyShower,
   },
   {
-    title: 'Reporting',
+    title: 'Fiestas en general',
     description:
-      'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
-    image: screenshotReporting,
+      'No importa la ocasión, nuestras invitaciones digitales personalizadas son perfectas para cualquier celebración. Desde cumpleaños hasta aniversarios, ¡hacemos que cada fiesta sea única!',
+    image: fiestasGenerales,
   },
 ]
 
@@ -76,11 +76,10 @@ export function PrimaryFeatures() {
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Everything you need to run your books.
+            Invitaciones Extraordinarias: Descubre Nuestra Colección
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            Well everything you need if you aren’t that picky about minor
-            details like tax compliance.
+          Sumérgete en un mundo de creatividad y elegancia con nuestra exclusiva colección de invitaciones personalizadas. Cada diseño cuenta una historia única.
           </p>
         </div>
         <Tab.Group
