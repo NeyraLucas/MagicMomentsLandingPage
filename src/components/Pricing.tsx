@@ -51,19 +51,23 @@ function CheckIcon({
 }
 
 function Plan({
+  title,
   name,
   price,
   description,
   href,
   features,
   featured = false,
+  bntName,
 }: {
+  title?: string
   name: string
   price: string
   description: string
   href: string
   features: Array<string>
   featured?: boolean
+  bntName: string
 }) {
   return (
     <section
@@ -72,7 +76,9 @@ function Plan({
         featured ? 'order-first bg-blue-600 py-8 lg:order-none' : 'lg:py-8',
       )}
     >
-      <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
+      <h3 className="mt-5 font-display text-lg text-white">
+        {title} <br></br> {name}
+      </h3>
       <p
         className={clsx(
           'mt-2 text-base',
@@ -105,7 +111,7 @@ function Plan({
         className="mt-8"
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
-        Get started
+        {bntName}
       </Button>
     </section>
   )
@@ -123,57 +129,69 @@ export function Pricing() {
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
               <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-blue-400" />
-              <span className="relative">Simple pricing,</span>
+              <span className="relative">Precios simples,</span>
             </span>{' '}
-            for everyone.
+            para todos.
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            It doesn’t matter what size your business is, our software won’t
-            work well for you.
+            Encuentra la Opción Perfecta para tu Celebración
           </p>
         </div>
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
           <Plan
-            name="Starter"
-            price="$9"
-            description="Good for anyone who is self-employed and just getting started."
+            title="Economía y Elegancia"
+            name="Básico"
+            price="999MXN"
+            description="Incluye un diseño de invitación personalizado con detalles encantadores para hacer que tu evento sea inolvidable."
             href="/register"
             features={[
-              'Send 10 quotes and invoices',
-              'Connect up to 2 bank accounts',
-              'Track up to 15 expenses per month',
-              'Manual payroll support',
-              'Export up to 3 reports',
+              'Galeria de fotos',
+              'Mapa del lugar',
+              'Contador para tu evento',
+              'Itinerario',
+              'Mesa de regalos',
             ]}
+            bntName="Comenzar"
           />
           <Plan
             featured
-            name="Small business"
-            price="$15"
-            description="Perfect for small / medium sized businesses."
+            title="Exclusividad de Lujo"
+            name="Premium"
+            price="1,999MXN"
+            description="Nuestra mejor oferta. Un diseño de invitación personalizado de primera clase, que captura la esencia de tu evento con un toque de lujo y sofisticación incomparables."
             href="/register"
             features={[
-              'Send 25 quotes and invoices',
-              'Connect up to 5 bank accounts',
-              'Track up to 50 expenses per month',
-              'Automated payroll support',
-              'Export up to 12 reports',
-              'Bulk reconcile transactions',
-              'Track in multiple currencies',
+              'Pagina personalizada',
+              'Galeria de fotos o video',
+              'Mapa del lugar',
+              'Contador para tu evento',
+              'Itinerario',
+              'Mesa de regalos',
+              'Botón Agregar a Calendario',
+              'Confirmación de asistencia',
+              'Recordatorio a tus invitados vía email',
+              'Botón de WhatsApp',
+              'Idiomas Inglés – Español - Otro',
             ]}
+            bntName="Comenzar"
           />
           <Plan
-            name="Enterprise"
-            price="$39"
-            description="For even the biggest enterprise companies."
+            title="Estilo Destacado"
+            name="Estandar"
+            price="1,499MXN"
+            description="Ofrecemos un diseño de invitación exclusivo, con toques de creatividad y una atención meticulosa a los detalles que reflejarán la esencia de tu ocasión."
             href="/register"
             features={[
-              'Send unlimited quotes and invoices',
-              'Connect up to 15 bank accounts',
-              'Track up to 200 expenses per month',
-              'Automated payroll support',
-              'Export up to 25 reports, including TPS',
+              'Pagina personalizada',
+              'Galeria de fotos o video',
+              'Mapa del lugar',
+              'Contador para tu evento',
+              'Itinerario',
+              'Mesa de regalos',
+              'Botón Agregar a Calendario',
+              'Confirmación de asistencia',
             ]}
+            bntName="Comenzar"
           />
         </div>
       </Container>

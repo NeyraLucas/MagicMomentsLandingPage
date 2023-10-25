@@ -31,6 +31,21 @@ export default {
       maxWidth: {
         '2xl': '40rem',
       },
+      colors: {
+        pink: {
+          '50': '#fff1f3',
+          '100': '#ffe3e7',
+          '200': '#ffc0cb',
+          '300': '#ffa2b3',
+          '400': '#fe6e8b',
+          '500': '#f83b66',
+          '600': '#e51951',
+          '700': '#c20e43',
+          '800': '#a20f40',
+          '900': '#8a113c',
+          '950': '#4d041c',
+        },
+      },
     },
   },
   plugins: [formsPlugin, headlessuiPlugin],
