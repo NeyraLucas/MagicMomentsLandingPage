@@ -1,11 +1,14 @@
 {
   "name": "tailwindui-salient",
+  "homepage": "https://github.com/NeyraLucas/MagicMomentsLandingPage",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "next lint"
   },
   "browserslist": "defaults, not ie <= 11",
@@ -27,6 +30,7 @@
   "devDependencies": {
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.16",
+    "gh-pages": "^6.0.0",
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.5.2",
     "sharp": "^0.32.0"
