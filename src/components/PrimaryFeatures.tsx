@@ -16,25 +16,25 @@ const features = [
   {
     title: 'Bodas',
     description:
-      "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
+      "Celebra el amor en su máxima expresión con nuestras invitaciones digitales personalizadas para bodas. Diseños elegantes y románticos que marcan el comienzo de un nuevo capítulo.",
     image: wedding,
   },
   {
     title: 'XV años',
     description:
-      "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
+      "Los XV años son un hito especial en la vida de cualquier joven. Nuestras invitaciones digitales capturan la belleza y la emoción de este momento único.",
     image: myXV,
   },
   {
     title: 'Baby Shower',
     description:
-      "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
+      "Dale la bienvenida al nuevo miembro de la familia con invitaciones digitales tiernas y adorables para baby showers. Un toque de dulzura para este momento especial.",
     image: babyShower,
   },
   {
     title: 'Fiestas en general',
     description:
-      'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
+      'No importa la ocasión, nuestras invitaciones digitales personalizadas son perfectas para cualquier celebración. Desde cumpleaños hasta aniversarios, ¡hacemos que cada fiesta sea única!',
     image: fiestasGenerales,
   },
 ]

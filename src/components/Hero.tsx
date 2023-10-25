@@ -14,7 +14,7 @@ export function Hero() {
     <Container className="pb-16 pt-20 text-center lg:pt-32">
       <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
       Esculpiendo{' '}
-        <span className="relative whitespace-nowrap text-sky-600">
+        <span className="relative whitespace-nowrap text-sky-500">
           <svg
             aria-hidden="true"
             viewBox="0 0 418 42"
@@ -31,7 +31,7 @@ export function Hero() {
       En nuestra plataforma, creamos recuerdos inolvidables con invitaciones personalizadas. Diseños únicos y sin registro, solo a un mensaje de distancia por WhatsApp o email.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/register">Más Detalles</Button>
+        <Button href="#footer" className='bg-sky-600'>Más Detalles</Button>
       </div>
       {/* <div className="mt-36 lg:mt-44">
         <p className="font-display text-base text-slate-900">
