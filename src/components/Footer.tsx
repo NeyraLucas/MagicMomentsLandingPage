@@ -1,33 +1,145 @@
+'use client'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
+import { useForm } from 'react-hook-form'
+
+interface FormData {
+  name: string
+  numberPhone: number
+  email: string
+  message: string
+}
 
 export function Footer() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  console.log(errors)
+
+  const onSubmit = handleSubmit((values) => {
+    console.log(values)
+  })
   return (
     <footer className="bg-slate-50">
       <Container>
-      <form className='py-32'>
-          <div className='container mx-auto px-16 py-8 bg-slate-900 rounded-lg'>
-            <h1 className="font-display text-3xl tracking-tight text-white sm:text-4xl pb-5">¡Conáctanos!</h1>
-            <div className="relative z-0 w-full mb-6 group">
-              <input type="text" name="floating_name" id="floating_name" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-              <label htmlFor="floating_name" className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
+        <form className="py-32" onSubmit={onSubmit}>
+          <div className="container mx-auto rounded-lg bg-slate-900 px-16 py-8">
+            <h1 className="pb-5 font-display text-3xl tracking-tight text-white sm:text-4xl">
+              ¡Conáctanos!
+            </h1>
+            <div className="group relative z-0 mb-6 w-full">
+              <input
+                className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-sm text-white focus:border-blue-600 focus:outline-none focus:ring-0"
+                placeholder=" "
+                {...register('name', {
+                  required: {
+                    value: true,
+                    message: 'Nombre requerido',
+                  },
+                  minLength: {
+                    value: 2,
+                    message: 'El nombre debe tener por lo menos 2 caracteres',
+                  },
+                  maxLength: {
+                    value: 40,
+                    message: 'El nombre debe tener máximo 40 caracteres',
+                  },
+                })}
+              />
+              <label
+                htmlFor="floating_name"
+                className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600"
+              >
+                Nombre
+              </label>
+              {errors.name && (
+                <span className="text-sm text-red-500">
+                  <>{errors.name.message}</>
+                </span>
+              )}
             </div>
-            <div className="relative z-0 w-full mb-6 group">
-              <input type="number" name="floating_tel" id="floating_tel" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-              <label htmlFor="floating_tel" className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Teléfono de contacto</label>
+            <div className="group relative z-0 mb-6 w-full">
+              <input
+                className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-sm text-white focus:border-blue-600 focus:outline-none focus:ring-0"
+                placeholder=" "
+                {...register('numberPhone', {
+                  required: {
+                    value: true,
+                    message: 'Teléfono de contacto requerido',
+                  },
+                  pattern: {
+                    value:
+                    /^[\(]?[\+]?(\d{2}|\d{3})[\)]?[\s]?((\d{6}|\d{8})|(\d{3}[\*\.\-\s]){3}|(\d{2}[\*\.\-\s]){4}|(\d{4}[\*\.\-\s]){2})|\d{8}|\d{10}|\d{12}$/,
+                    message: 'El número no es válido',
+                  },
+                })}
+              />
+              <label
+                htmlFor="floating_tel"
+                className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600"
+              >
+                Teléfono de contacto
+              </label>
+              {errors.numberPhone && (
+                <span className="text-sm text-red-500">
+                  <>{errors.numberPhone.message}</>
+                </span>
+              )}
             </div>
-            <div className="relative z-0 w-full mb-6 group">
-              <input type="email" name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-              <label htmlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo electrónico</label>
+            <div className="group relative z-0 mb-6 w-full">
+              <input
+                className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-sm text-white focus:border-blue-600 focus:outline-none focus:ring-0"
+                placeholder=" "
+                {...register('email', {
+                  required: {
+                    value: true,
+                    message: 'Correo electrónico requerido',
+                  },
+                  pattern: {
+                    value:
+                      /^[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}$/,
+                    message: 'Correo no válido',
+                  },
+                })}
+              />
+              <label
+                htmlFor="floating_email"
+                className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600"
+              >
+                Correo electrónico
+              </label>
+              {errors.email && (
+                <span className="text-sm text-red-500">
+                  <>{errors.email.message}</>
+                </span>
+              )}
             </div>
-            <div className="relative z-0 w-full mb-6 group">
-              <label htmlFor="message" className="block mb-2 text-sm peer-focus:font-medium text-white">Dejános un mensaje</label>
-              <textarea id="message" className="block p-2.5 w-full text-sm text-white bg-slate-800 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Cuéntanos cuáles son tus dudas..."></textarea>
+            <div className="group relative z-0 mb-6 w-full">
+              <label
+                htmlFor="message"
+                className="mb-2 block text-sm text-white peer-focus:font-medium"
+              >
+                Dejános un mensaje
+              </label>
+              <textarea
+                id="message"
+                className="block w-full rounded-lg border border-gray-300 bg-slate-800 p-2.5 text-sm text-white focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Cuéntanos cuáles son tus dudas..."
+                {...register('message', {})}
+              ></textarea>
             </div>
-            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Enviar</button>
+            <button
+              type="submit"
+              className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto"
+            >
+              Enviar
+            </button>
           </div>
         </form>
 
